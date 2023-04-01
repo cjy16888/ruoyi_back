@@ -77,8 +77,9 @@ public class CaptchaController
             //math，数学验证码
             //这个 createText 被重写了，自己实现的算法，生成数学公式
             String capText = captchaProducerMath.createText();
-            capStr = capText.substring(0, capText.lastIndexOf("@"));
-            code = capText.substring(capText.lastIndexOf("@") + 1);
+            //因为上面重写的方法中，生成的  数字公式验证码   是 @ 结尾的，@ 后面是 result ，不进行显示
+            capStr = capText.substring(0, capText.lastIndexOf("@"));   //计算验证码的数学公式
+            code = capText.substring(capText.lastIndexOf("@") + 1);  //验证码的正确答案
             image = captchaProducerMath.createImage(capStr);
         }
         else if ("char".equals(captchaType))
@@ -88,6 +89,7 @@ public class CaptchaController
             image = captchaProducer.createImage(capStr);
         }
 
+        //存放验证码答案 code 到  redis 中
         //redisCache.setCacheObject(verifyKey, code, Constants.CAPTCHA_EXPIRATION, TimeUnit.MINUTES);
         // 转换流信息写出
         FastByteArrayOutputStream os = new FastByteArrayOutputStream();
