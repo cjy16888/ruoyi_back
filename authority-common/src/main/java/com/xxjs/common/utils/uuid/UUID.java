@@ -1,7 +1,6 @@
 package com.xxjs.common.utils.uuid;
 
-import com.ruoyi.common.exception.UtilException;
-
+import com.sun.xml.internal.ws.util.UtilException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;

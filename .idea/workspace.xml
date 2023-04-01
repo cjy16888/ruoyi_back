@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd5c7a91-7e86-4c41-958f-461c86902f9f" name="Changes" comment="" />
+    <list default="true" id="bd5c7a91-7e86-4c41-958f-461c86902f9f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/config/BaseConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/constant/CacheConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/core/redis/RedisCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/utils/sign/Base64.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/utils/sign/Md5Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/config/CaptchaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authority-system/src/main/java/com/xxjs/system/service/ISysConfigService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log.path_IS_UNDEFINED/sys-info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority-admin/src/main/java/com/xxjs/controller/CaptchaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-admin/src/main/java/com/xxjs/controller/CaptchaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority-admin/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authority-admin/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/utils/uuid/UUID.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/utils/uuid/UUID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority-common/target/classes/com/xxjs/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority-framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authority-framework/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority-framework/target/classes/com/xxjs/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +38,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -40,37 +57,42 @@
     </option>
   </component>
   <component name="ProjectId" id="2Nns6ivcHbYash4zXxNmOhggqIq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Java/Ruoyi-Vue/xxjs/test/Ruoyi_back&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15820312&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "F:/Java/Ruoyi-Vue/xxjs/test/Ruoyi_back/authority-common/src/main/java/com/xxjs/common/utils",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15820312",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "spring.configuration.checksum": "8f835a088e2b243c335f386754485082",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Java\Ruoyi-Vue\xxjs\test\Ruoyi_back\authority-common\src\main\java\com\xxjs\common\utils" />
+      <recent name="F:\Java\Ruoyi-Vue\xxjs\test\Ruoyi_back\authority-system\src\main\java\com\xxjs\system" />
       <recent name="F:\Java\Ruoyi-Vue\xxjs\test\Ruoyi_back\authority-admin\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -78,10 +100,11 @@
       <recent name="F:\Java\Ruoyi-Vue\xxjs\test\Ruoyi_back\authority-system\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.xxjs.common.utils" />
       <recent name="com.xxjs.common.constant" />
-      <recent name="com.xxjs.common.core.domain" />
-      <recent name="com.xxjs.controller" />
+      <recent name="com.xxjs.common.config" />
+      <recent name="com.xxjs.common.core.redis" />
+      <recent name="com.xxjs.config" />
+      <recent name="com.xxjs.common.utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -120,6 +143,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680311008484</updated>
       <workItem from="1680311010522" duration="16624000" />
+      <workItem from="1680333341951" duration="5254000" />
     </task>
     <task id="LOCAL-00001" summary="搭建框架">
       <created>1680329763533</created>
@@ -142,13 +166,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680331890778</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="搭建基础框架">
+      <created>1680333411835</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680333411835</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
