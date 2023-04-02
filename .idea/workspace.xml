@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd5c7a91-7e86-4c41-958f-461c86902f9f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/constant/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/web/exception/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-admin/src/main/java/com/xxjs/controller/CaptchaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-admin/src/main/java/com/xxjs/controller/CaptchaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/authority-admin/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-admin/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/authority-admin/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authority-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/core/redis/RedisCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/core/redis/RedisCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,11 +86,11 @@
       <recent name="F:\Java\Ruoyi-Vue\xxjs\test\Ruoyi_back\authority-system\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.xxjs.framework.web.exception" />
       <recent name="com.xxjs.framework.config" />
       <recent name="com.xxjs.common.constant" />
       <recent name="com.xxjs.config" />
       <recent name="com.xxjs.common.config" />
-      <recent name="com.xxjs.common.core.redis" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -137,7 +130,7 @@
       <updated>1680311008484</updated>
       <workItem from="1680311010522" duration="16624000" />
       <workItem from="1680333341951" duration="7749000" />
-      <workItem from="1680410597426" duration="2104000" />
+      <workItem from="1680410597426" duration="3339000" />
     </task>
     <task id="LOCAL-00001" summary="搭建框架">
       <created>1680329763533</created>
@@ -181,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680350378994</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="redis存储验证码">
+      <created>1680412948626</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680412948626</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +196,8 @@
     <MESSAGE value="搭建基础框架" />
     <MESSAGE value="登录、验证码" />
     <MESSAGE value="登录、验证码（补充）" />
-    <option name="LAST_COMMIT_MESSAGE" value="登录、验证码（补充）" />
+    <MESSAGE value="redis存储验证码" />
+    <option name="LAST_COMMIT_MESSAGE" value="redis存储验证码" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
