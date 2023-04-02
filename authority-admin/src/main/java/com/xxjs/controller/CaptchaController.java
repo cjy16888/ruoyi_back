@@ -3,7 +3,9 @@ package com.xxjs.controller;
 import com.google.code.kaptcha.Producer;
 import com.xxjs.common.config.BaseConfig;
 import com.xxjs.common.constant.CacheConstants;
+import com.xxjs.common.constant.Constants;
 import com.xxjs.common.core.domain.AjaxResult;
+import com.xxjs.common.core.redis.RedisCache;
 import com.xxjs.common.utils.sign.Base64;
 import com.xxjs.common.utils.uuid.IdUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 验证码操作处理
@@ -34,8 +37,8 @@ public class CaptchaController
     @Resource(name = "captchaProducerMath")
     private Producer captchaProducerMath;
 
-    //@Autowired
-    //private RedisCache redisCache;
+    @Autowired
+    private RedisCache redisCache;
     
     //@Autowired
     //private ISysConfigService configService;
@@ -89,8 +92,11 @@ public class CaptchaController
             image = captchaProducer.createImage(capStr);
         }
 
-        //存放验证码答案 code 到  redis 中
-        //redisCache.setCacheObject(verifyKey, code, Constants.CAPTCHA_EXPIRATION, TimeUnit.MINUTES);
+        /**
+         * key、value、timeout、timeunit
+         * String类型， 存放验证码答案 code 到  redis 中
+         */
+        redisCache.setCacheObject(verifyKey, code, Constants.CAPTCHA_EXPIRATION, TimeUnit.MINUTES);
         // 转换流信息写出
         FastByteArrayOutputStream os = new FastByteArrayOutputStream();
         try
