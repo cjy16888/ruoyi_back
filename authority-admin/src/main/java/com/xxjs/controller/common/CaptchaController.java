@@ -1,4 +1,4 @@
-package com.xxjs.controller;
+package com.xxjs.controller.common;
 
 import com.google.code.kaptcha.Producer;
 import com.xxjs.common.config.BaseConfig;
