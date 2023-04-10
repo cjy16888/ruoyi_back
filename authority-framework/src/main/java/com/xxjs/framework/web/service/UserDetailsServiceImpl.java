@@ -1,6 +1,7 @@
 package com.xxjs.framework.web.service;
 
 import com.xxjs.common.core.domain.entity.SysUser;
+import com.xxjs.common.core.domain.model.LoginUser;
 import com.xxjs.common.enums.UserStatus;
 import com.xxjs.common.exception.ServiceException;
 import com.xxjs.common.utils.StringUtils;
@@ -8,13 +9,10 @@ import com.xxjs.system.service.ISysUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import java.util.Collection;
 
 /**
  * 用户验证处理
@@ -63,41 +61,7 @@ public class UserDetailsServiceImpl implements UserDetailsService
     public UserDetails createLoginUser(SysUser user)
     {
         //return new LoginUser(user.getUserId(), user.getDeptId(), user, permissionService.getMenuPermission(user));
-        return new UserDetails() {
-            @Override
-            public Collection<? extends GrantedAuthority> getAuthorities() {
-                return null;
-            }
-
-            @Override
-            public String getPassword() {
-                return null;
-            }
-
-            @Override
-            public String getUsername() {
-                return null;
-            }
-
-            @Override
-            public boolean isAccountNonExpired() {
-                return false;
-            }
-
-            @Override
-            public boolean isAccountNonLocked() {
-                return false;
-            }
-
-            @Override
-            public boolean isCredentialsNonExpired() {
-                return false;
-            }
-
-            @Override
-            public boolean isEnabled() {
-                return false;
-            }
-        };
+        //LoginUser存储的是 form 表单的用户登录信息，security用来和数据库中的信息进行校验的
+        return new LoginUser(user);
     }
 }

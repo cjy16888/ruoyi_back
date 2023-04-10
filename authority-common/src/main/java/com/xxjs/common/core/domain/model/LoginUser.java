@@ -10,7 +10,8 @@ import java.util.Set;
 
 /**
  * 登录用户身份权限
- *
+ *  将我们前端登录的表单信息，用户名、密码 进行封装到这 实体 里面
+ *  后面 security 取出该实体信息和数据库进行比较，校验
  * @author xxjs
  */
 public class LoginUser implements UserDetails
@@ -106,6 +107,11 @@ public class LoginUser implements UserDetails
     {
     }
 
+    public LoginUser(SysUser user)
+    {
+        this.user = user;
+    }
+
     public LoginUser(SysUser user, Set<String> permissions)
     {
         this.user = user;
@@ -124,7 +130,7 @@ public class LoginUser implements UserDetails
     @Override
     public String getPassword()
     {
-        return user.getPassword();
+        return "{bcrypt}" + user.getPassword();
     }
 
     @Override

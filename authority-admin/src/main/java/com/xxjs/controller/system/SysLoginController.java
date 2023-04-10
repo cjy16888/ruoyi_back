@@ -6,6 +6,8 @@ import com.xxjs.common.core.domain.AjaxResult;
 import com.xxjs.common.core.domain.entity.SysUser;
 import com.xxjs.common.core.domain.model.LoginBody;
 import com.xxjs.common.utils.SecurityUtils;
+import com.xxjs.framework.web.service.SysLoginService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,8 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SysLoginController
 {
-    //@Autowired
-    //private SysLoginService loginService;
+    @Autowired
+    private SysLoginService loginService;
     //
     //@Autowired
     //private ISysMenuService menuService;
@@ -30,7 +32,7 @@ public class SysLoginController
 
     /**
      * 登录方法
-     * 
+     * uuid-唯一标识，前端生成的
      * @param loginBody 登录信息
      * @return 结果
      */
@@ -39,9 +41,9 @@ public class SysLoginController
     {
         AjaxResult ajax = AjaxResult.success();
         // 生成令牌
-        //String token = loginService.login(loginBody.getUsername(), loginBody.getPassword(), loginBody.getCode(),
-        //        loginBody.getUuid());
-        ajax.put(Constants.TOKEN, "123456");
+        String token = loginService.login(loginBody.getUsername(), loginBody.getPassword(), loginBody.getCode(),
+                loginBody.getUuid());
+        ajax.put(Constants.TOKEN, token);
         return ajax;
     }
 

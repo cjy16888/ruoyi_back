@@ -5,69 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd5c7a91-7e86-4c41-958f-461c86902f9f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/annotation/Anonymous.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/annotation/DataScope.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/annotation/DataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/annotation/Excel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/annotation/Excels.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/annotation/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/annotation/RateLimiter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/annotation/RepeatSubmit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/constant/UserConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/core/domain/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/core/domain/entity/SysDept.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/core/domain/entity/SysDictData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/core/domain/entity/SysDictType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/core/domain/entity/SysMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/core/domain/entity/SysRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/core/domain/entity/SysUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/core/text/Convert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/enums/BusinessStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/enums/BusinessType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/enums/DataSourceType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/enums/HttpMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/enums/LimitType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/enums/OperatorType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/enums/UserStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/utils/SecurityUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/utils/poi/ExcelHandlerAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/utils/poi/ExcelUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/utils/spring/SpringUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/xss/Xss.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/xss/XssValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/config/DruidConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/config/properties/DruidProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/datasource/DynamicDataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/datasource/DynamicDataSourceContextHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/security/context/AuthenticationContextHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/security/context/PermissionContextHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/security/filter/JwtAuthenticationTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/security/handle/AuthenticationEntryPointImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/security/handle/LogoutSuccessHandlerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/web/service/SysLoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/web/service/SysPermissionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/web/service/TokenService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/web/service/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-system/src/main/java/com/xxjs/system/domain/SysConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-system/src/main/java/com/xxjs/system/domain/SysPost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-system/src/main/java/com/xxjs/system/mapper/SysConfigMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-system/src/main/java/com/xxjs/system/mapper/SysUserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-system/src/main/java/com/xxjs/system/service/ISysUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-system/src/main/java/com/xxjs/system/service/impl/SysConfigServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-system/src/main/java/com/xxjs/system/service/impl/SysUserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-system/src/main/resources/mapper/system/SysConfigMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authority-system/src/main/resources/mapper/system/SysUserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authority-admin/src/main/java/com/xxjs/controller/system/SysLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-admin/src/main/java/com/xxjs/controller/system/SysLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/authority-admin/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-admin/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/authority-admin/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authority-common/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/core/domain/model/LoginUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-common/src/main/java/com/xxjs/common/core/domain/model/LoginUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/config/ApplicationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authority-system/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-system/src/main/java/com/xxjs/system/service/ISysConfigService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-system/src/main/java/com/xxjs/system/service/ISysConfigService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/web/service/SysLoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/web/service/SysLoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/web/service/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/web/service/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/web/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/web/service/UserDetailsServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +146,7 @@
       <workItem from="1680594948850" duration="6203000" />
       <workItem from="1680660038473" duration="1209000" />
       <workItem from="1681008050846" duration="6710000" />
-      <workItem from="1681121460339" duration="13381000" />
+      <workItem from="1681121460339" duration="17432000" />
     </task>
     <task id="LOCAL-00001" summary="搭建框架">
       <created>1680329763533</created>
@@ -268,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680614343995</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="配置了多数据源，以及 user 的xml文件，mapper文件，进行了验证码的校验的功能">
+      <created>1681137090834</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681137090834</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +236,8 @@
     <MESSAGE value="redis存储验证码" />
     <MESSAGE value="全局异常处理器" />
     <MESSAGE value="security实现登录" />
-    <option name="LAST_COMMIT_MESSAGE" value="security实现登录" />
+    <MESSAGE value="配置了多数据源，以及 user 的xml文件，mapper文件，进行了验证码的校验的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置了多数据源，以及 user 的xml文件，mapper文件，进行了验证码的校验的功能" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

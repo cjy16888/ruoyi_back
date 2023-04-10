@@ -90,11 +90,11 @@ public class SysLoginService
             AuthenticationContextHolder.clearContext();
         }
         //AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_SUCCESS, MessageUtils.message("user.login.success")));
+        //通过 security 的认证信息进行获取用户信息 principal
         LoginUser loginUser = (LoginUser) authentication.getPrincipal();
         recordLoginInfo(loginUser.getUserId());
         // 生成token
-        //return tokenService.createToken(loginUser);
-        return "xxjs";
+        return tokenService.createToken(loginUser);
     }
 
     /**

@@ -100,12 +100,13 @@ public class TokenService
 
     /**
      * 创建令牌
-     *
+     * 相当于是用户的唯一标识
      * @param loginUser 用户信息
      * @return 令牌
      */
     public String createToken(LoginUser loginUser)
     {
+        //随机生成一串字符串
         String token = IdUtils.fastUUID();
         loginUser.setToken(token);
         setUserAgent(loginUser);
@@ -113,6 +114,8 @@ public class TokenService
 
         Map<String, Object> claims = new HashMap<>();
         claims.put(Constants.LOGIN_USER_KEY, token);
+        //真正的生成令牌 token
+        //根据这些数据，生成 token
         return createToken(claims);
     }
 
@@ -170,7 +173,9 @@ public class TokenService
     private String createToken(Map<String, Object> claims)
     {
         String token = Jwts.builder()
+                //声明的数据信息
                 .setClaims(claims)
+                //签名，  secret 密钥，位于 yml 文件中
                 .signWith(SignatureAlgorithm.HS512, secret).compact();
         return token;
     }
