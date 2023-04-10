@@ -3,7 +3,10 @@ package com.xxjs.controller.system;
 
 import com.xxjs.common.constant.Constants;
 import com.xxjs.common.core.domain.AjaxResult;
+import com.xxjs.common.core.domain.entity.SysUser;
 import com.xxjs.common.core.domain.model.LoginBody;
+import com.xxjs.common.utils.SecurityUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,22 +51,22 @@ public class SysLoginController
      * 
      * @return 用户信息
      */
-    //@GetMapping("getInfo")
-    //public AjaxResult getInfo()
-    //{
-    //    //获取当前的登录用户信息
-    //    SysUser user = SecurityUtils.getLoginUser().getUser();
-    //    // 角色集合
-    //    Set<String> roles = permissionService.getRolePermission(user);
-    //    // 权限集合
-    //    Set<String> permissions = permissionService.getMenuPermission(user);
-    //    AjaxResult ajax = AjaxResult.success();
-    //    //这玩意继承了  HashMap
-    //    ajax.put("user", user);
-    //    ajax.put("roles", roles);
-    //    ajax.put("permissions", permissions);
-    //    return ajax;
-    //}
+    @GetMapping("getInfo")
+    public AjaxResult getInfo()
+    {
+        //获取当前的登录用户信息
+        SysUser user = SecurityUtils.getLoginUser().getUser();
+        // 角色集合
+        //Set<String> roles = permissionService.getRolePermission(user);
+        // 权限集合
+        //Set<String> permissions = permissionService.getMenuPermission(user);
+        AjaxResult ajax = AjaxResult.success();
+        //这玩意继承了  HashMap
+        ajax.put("user", user);
+        //ajax.put("roles", roles);
+        //ajax.put("permissions", permissions);
+        return ajax;
+    }
     //
     ///**
     // * 前端异步请求

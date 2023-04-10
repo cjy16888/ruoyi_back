@@ -42,6 +42,13 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
+        <!-- 自定义验证注解 -->
+        <!-- 比如校验属性参数不能为空等等 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
         <!-- 动态数据源 -->
         <!--用来配置 主从数据库的，不添加 yml 会报错，找不到指定的 dataSource url-->
         <dependency>
@@ -79,6 +86,11 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>4.1.2</version>
         </dependency>
     </dependencies>
 
