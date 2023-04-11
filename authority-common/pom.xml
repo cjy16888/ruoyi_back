@@ -92,6 +92,13 @@
             <artifactId>poi</artifactId>
             <version>4.1.2</version>
         </dependency>
+
+        <!-- servlet包 -->
+        <!--对 request、response 进行操作，spring boot内置-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

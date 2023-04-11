@@ -56,13 +56,16 @@ public class TokenService
     public LoginUser getLoginUser(HttpServletRequest request)
     {
         // 获取请求携带的令牌
+        // 该 token 不包括前缀 Bearer
         String token = getToken(request);
         if (StringUtils.isNotEmpty(token))
         {
             try
             {
+                //   token 解析器，获取 token 中的身份信息
                 Claims claims = parseToken(token);
                 // 解析对应的权限以及用户信息
+                // uuid 用来区别不同的用户，对应不同的 token，也就是对应不同的 loginUser
                 String uuid = (String) claims.get(Constants.LOGIN_USER_KEY);
                 String userKey = getTokenKey(uuid);
                 LoginUser user = redisCache.getCacheObject(userKey);
@@ -108,11 +111,15 @@ public class TokenService
     {
         //随机生成一串字符串
         String token = IdUtils.fastUUID();
+        //将 token 存到 loginUser 中，就是一个 uuid
         loginUser.setToken(token);
         setUserAgent(loginUser);
+        //刷新有效期
         refreshToken(loginUser);
 
         Map<String, Object> claims = new HashMap<>();
+        //根据 uuid 注入到 token 的声明信息中，以后反解析的时候，可以从 token 中获取的该 claims 声明的所有信息
+        //不同的 uuid 对应着不同的 login用户
         claims.put(Constants.LOGIN_USER_KEY, token);
         //真正的生成令牌 token
         //根据这些数据，生成 token
@@ -146,6 +153,7 @@ public class TokenService
         loginUser.setExpireTime(loginUser.getLoginTime() + expireTime * MILLIS_MINUTE);
         // 根据uuid将loginUser缓存
         String userKey = getTokenKey(loginUser.getToken());
+        // uuid 用来缓存不同的 user 用户的token，也就是一台电脑可以登录多个账户
         redisCache.setCacheObject(userKey, loginUser, expireTime, TimeUnit.MINUTES);
     }
 
@@ -173,7 +181,7 @@ public class TokenService
     private String createToken(Map<String, Object> claims)
     {
         String token = Jwts.builder()
-                //声明的数据信息
+                //声明的数据信息，用它来加密生成 token
                 .setClaims(claims)
                 //签名，  secret 密钥，位于 yml 文件中
                 .signWith(SignatureAlgorithm.HS512, secret).compact();
@@ -214,16 +222,22 @@ public class TokenService
      */
     private String getToken(HttpServletRequest request)
     {
+        //获取前端携带的 token 值
         String token = request.getHeader(header);
+        //判断 token 是否是以 Bearer 前缀为开头
         if (StringUtils.isNotEmpty(token) && token.startsWith(Constants.TOKEN_PREFIX))
         {
+            //将 前缀 Bearer 去掉
             token = token.replace(Constants.TOKEN_PREFIX, "");
         }
+        //返回真正的 Token
         return token;
     }
 
     private String getTokenKey(String uuid)
     {
+        //   redis 拼接,  uuid 就是普通的 uuid
+        // login_tokens: + uuid
         return CacheConstants.LOGIN_TOKEN_KEY + uuid;
     }
 }

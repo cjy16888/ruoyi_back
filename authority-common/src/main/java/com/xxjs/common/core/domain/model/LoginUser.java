@@ -13,7 +13,7 @@ import java.util.Set;
  *  将我们前端登录的表单信息，用户名、密码 进行封装到这 实体 里面
  *  后面 security 取出该实体信息和数据库进行比较，校验
  * @author xxjs
- */
+        */
 public class LoginUser implements UserDetails
 {
     private static final long serialVersionUID = 1L;

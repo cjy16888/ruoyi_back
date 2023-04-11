@@ -9,6 +9,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
  * spring security配置
@@ -19,6 +20,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfig extends WebSecurityConfigurerAdapter
 {
 
+    @Autowired
+    private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
     @Autowired
     private LogoutSuccessHandlerImpl logoutSuccessHandler;
 
@@ -45,6 +48,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 
         // 添加Logout filter
         http.logout().logoutUrl("/logout").logoutSuccessHandler(logoutSuccessHandler);
+
+        //将 jwt 过滤器放到 username认证 filter 前面，具体原因去看 security
+        http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
 
         http.csrf().disable(); //不然的话，login还是访问不了，因为 login 是post异步请求，403
 
