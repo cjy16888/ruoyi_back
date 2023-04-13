@@ -30,8 +30,8 @@ public class UserDetailsServiceImpl implements UserDetailsService
     //@Autowired
     //private SysPasswordService passwordService;
     //
-    //@Autowired
-    //private SysPermissionService permissionService;
+    @Autowired
+    private SysPermissionService permissionService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
@@ -52,7 +52,6 @@ public class UserDetailsServiceImpl implements UserDetailsService
             log.info("登录用户：{} 已被停用.", username);
             throw new ServiceException("对不起，您的账号：" + username + " 已停用");
         }
-
         //passwordService.validate(user);
 
         return createLoginUser(user);
@@ -62,6 +61,6 @@ public class UserDetailsServiceImpl implements UserDetailsService
     {
         //return new LoginUser(user.getUserId(), user.getDeptId(), user, permissionService.getMenuPermission(user));
         //LoginUser存储的是 form 表单的用户登录信息，security用来和数据库中的信息进行校验的
-        return new LoginUser(user);
+        return new LoginUser(user, permissionService.getMenuPermission(user));
     }
 }

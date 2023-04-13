@@ -15,7 +15,8 @@ import java.util.List;
 
 /**
  * 用户对象 sys_user
- *
+ * 这是 数据库 user 实体类 映射出来的user对象
+ * loginUser 是接受前端数据 form 表单的实体类对象
  * @author ruoyi
  */
 public class SysUser extends BaseEntity
@@ -117,6 +118,7 @@ public class SysUser extends BaseEntity
 
     public static boolean isAdmin(Long userId)
     {
+        //admin用户的id是 1
         return userId != null && 1L == userId;
     }
 

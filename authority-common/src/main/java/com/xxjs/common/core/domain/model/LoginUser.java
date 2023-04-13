@@ -107,11 +107,6 @@ public class LoginUser implements UserDetails
     {
     }
 
-    public LoginUser(SysUser user)
-    {
-        this.user = user;
-    }
-
     public LoginUser(SysUser user, Set<String> permissions)
     {
         this.user = user;

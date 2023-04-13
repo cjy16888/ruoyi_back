@@ -46,6 +46,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter
             //将登录信息存储到 上下文Context 中，为了之后登录校验，类比 ThreadLocal 获取用户信息
             SecurityContextHolder.getContext().setAuthentication(authenticationToken);
         }
+        //放行
         chain.doFilter(request, response);
     }
 }
