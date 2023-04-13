@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd5c7a91-7e86-4c41-958f-461c86902f9f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-admin/src/main/java/com/xxjs/controller/common/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-admin/src/main/java/com/xxjs/controller/common/CommonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authority-admin/src/main/java/com/xxjs/controller/system/SysLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-admin/src/main/java/com/xxjs/controller/system/SysLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/authority-admin/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-admin/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/authority-admin/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/web/service/SysLoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/web/service/SysLoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority-system/src/main/java/com/xxjs/system/service/impl/SysMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-system/src/main/java/com/xxjs/system/service/impl/SysMenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/web/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authority-framework/src/main/java/com/xxjs/framework/web/service/UserDetailsServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +145,7 @@
       <workItem from="1681008050846" duration="6710000" />
       <workItem from="1681121460339" duration="19147000" />
       <workItem from="1681177216347" duration="9321000" />
-      <workItem from="1681314737386" duration="22110000" />
+      <workItem from="1681314737386" duration="23763000" />
     </task>
     <task id="LOCAL-00001" summary="搭建框架">
       <created>1680329763533</created>
@@ -243,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681365760510</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="RouterVO, 实现sidebar左侧菜单栏，以及子父级目录的树形结构查询，以及返回">
+      <created>1681394106582</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681394106582</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +267,8 @@
     <MESSAGE value="security认证，生成 token 以及进行用户的校验 authenticated" />
     <MESSAGE value="校验登录状态，通过 token 解析用户信息" />
     <MESSAGE value="router 路由，以及数据库获取 permission 和 role 权限" />
-    <option name="LAST_COMMIT_MESSAGE" value="router 路由，以及数据库获取 permission 和 role 权限" />
+    <MESSAGE value="RouterVO, 实现sidebar左侧菜单栏，以及子父级目录的树形结构查询，以及返回" />
+    <option name="LAST_COMMIT_MESSAGE" value="RouterVO, 实现sidebar左侧菜单栏，以及子父级目录的树形结构查询，以及返回" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

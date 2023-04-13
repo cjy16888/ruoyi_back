@@ -54,13 +54,14 @@ public class UserDetailsServiceImpl implements UserDetailsService
         }
         //passwordService.validate(user);
 
+        //这里返回的是 Principal 对象
+        // SecurityContextHolder.getContext.getAuthentication.getPrincipal() 得到的内容就是下面的 return 的值
         return createLoginUser(user);
     }
 
     public UserDetails createLoginUser(SysUser user)
     {
-        //return new LoginUser(user.getUserId(), user.getDeptId(), user, permissionService.getMenuPermission(user));
+        return new LoginUser(user.getUserId(), user.getDeptId(), user, permissionService.getMenuPermission(user));
         //LoginUser存储的是 form 表单的用户登录信息，security用来和数据库中的信息进行校验的
-        return new LoginUser(user, permissionService.getMenuPermission(user));
     }
 }

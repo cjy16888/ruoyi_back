@@ -86,7 +86,7 @@ public class SysLoginController
     public AjaxResult getRouters()
     {
         //根据用户的权限，查看管理权限
-        Long userId = SecurityUtils.getLoginUser().getUser().getUserId();
+        Long userId = SecurityUtils.getUserId();
         //不同的用户的菜单显示可能是不一样的
         //获取当前用户可显示的菜单列表
         //左侧的菜单，sidebar, 查出来的是 父级目录  的 list 集合，sysMenu 里面有 children 的list集合
