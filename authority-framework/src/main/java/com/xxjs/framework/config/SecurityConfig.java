@@ -4,9 +4,9 @@ import com.xxjs.framework.security.filter.JwtAuthenticationTokenFilter;
 import com.xxjs.framework.security.handle.LogoutSuccessHandlerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -16,7 +16,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
  *
  * @author xxjs
  */
-@Configuration
+//该注解的作用：允许在 方法上面添加注解，比如 @PreAuthorize("hasAuthority('system:dict:list')")  进行限制访问
+//    拥有对应的权限方可以进行访问对应的资源
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter
 {
 
@@ -44,7 +46,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 //放行的只有 get 请求
-                .antMatchers("/captchaImage","/login").anonymous();
+                //anonymous 匿名访问，也就是可以不进行登录就可以进行访问的
+                .antMatchers("/captchaImage","/login").anonymous()
+                .anyRequest().authenticated();
 
         // 添加Logout filter
         http.logout().logoutUrl("/logout").logoutSuccessHandler(logoutSuccessHandler);

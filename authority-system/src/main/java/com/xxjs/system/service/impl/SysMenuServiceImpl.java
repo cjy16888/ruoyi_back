@@ -127,10 +127,12 @@ public class SysMenuServiceImpl implements ISysMenuService
         List<SysMenu> menus = null;
         if (SecurityUtils.isAdmin(userId))
         {
+            //admin的菜单
             menus = menuMapper.selectMenuTreeAll();
         }
         else
         {
+            //根据用户的id查找的
             menus = menuMapper.selectMenuTreeByUserId(userId);
         }
         return getChildPerms(menus, 0);
@@ -174,6 +176,7 @@ public class SysMenuServiceImpl implements ISysMenuService
             {
                 router.setAlwaysShow(true);
                 router.setRedirect("noRedirect");
+                //递归处理  子级目录
                 router.setChildren(buildMenus(cMenus));
             }
             else if (isMenuFrame(menu))
@@ -226,6 +229,7 @@ public class SysMenuServiceImpl implements ISysMenuService
             if (!tempList.contains(menu.getParentId()))
             {
                 recursionFn(menus, menu);
+
                 returnList.add(menu);
             }
         }
@@ -390,6 +394,8 @@ public class SysMenuServiceImpl implements ISysMenuService
 
     /**
      * 获取组件信息
+     * 顶级：component：“Layout”   辨别是什么位置
+     * 子级（可路由的）：component："system/post/list"   路由路径
      * 
      * @param menu 菜单信息
      * @return 组件信息
@@ -467,6 +473,7 @@ public class SysMenuServiceImpl implements ISysMenuService
                 returnList.add(t);
             }
         }
+        //所有的菜单的目录层级结构
         return returnList;
     }
 

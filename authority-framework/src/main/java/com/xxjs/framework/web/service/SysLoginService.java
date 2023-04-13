@@ -67,7 +67,7 @@ public class SysLoginService
             //登录校验
             UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
             AuthenticationContextHolder.setContext(authenticationToken);
-            // 该方法会去调用UserDetailsServiceImpl.loadUserByUsername,进行校验用户密码是否正确
+            // 该方法会去调用UserDetailsServiceImp.lloadUserByUsername,进行校验用户密码是否正确
             authentication = authenticationManager.authenticate(authenticationToken);
         }
         catch (Exception e)
@@ -92,7 +92,7 @@ public class SysLoginService
         //AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_SUCCESS, MessageUtils.message("user.login.success")));
         //通过 security 的认证信息进行获取用户信息 principal
         LoginUser loginUser = (LoginUser) authentication.getPrincipal();
-        recordLoginInfo(loginUser.getUserId());
+        recordLoginInfo(loginUser.getUser().getUserId());
         // 生成token
         return tokenService.createToken(loginUser);
     }
