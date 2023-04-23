@@ -1,6 +1,9 @@
 package com.xxjs.framework.security.handle;
 
+import com.alibaba.fastjson2.JSON;
+import com.xxjs.common.core.domain.AjaxResult;
 import com.xxjs.common.core.domain.model.LoginUser;
+import com.xxjs.common.utils.ServletUtils;
 import com.xxjs.common.utils.StringUtils;
 import com.xxjs.framework.web.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +45,6 @@ public class LogoutSuccessHandlerImpl implements LogoutSuccessHandler
             // 记录用户退出日志
             //AsyncManager.me().execute(AsyncFactory.recordLogininfor(userName, Constants.LOGOUT, "退出成功"));
         }
-        //ServletUtils.renderString(response, JSON.toJSONString(AjaxResult.success("退出成功")));
+        ServletUtils.renderString(response, JSON.toJSONString(AjaxResult.success("退出成功")));
     }
 }

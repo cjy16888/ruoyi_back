@@ -1,6 +1,7 @@
 package com.xxjs.framework.config;
 
 import com.xxjs.framework.security.filter.JwtAuthenticationTokenFilter;
+import com.xxjs.framework.security.handle.AuthenticationEntryPointImpl;
 import com.xxjs.framework.security.handle.LogoutSuccessHandlerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -9,6 +10,7 @@ import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
@@ -26,6 +28,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
     @Autowired
     private LogoutSuccessHandlerImpl logoutSuccessHandler;
+    @Autowired
+    private AuthenticationEntryPointImpl unauthenticatedHandler;
 
 
     //对 AuthenticationManager 进行重写（逻辑不动）只是为了注入到 spring 容器中，供我们进行使用
@@ -50,7 +54,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                 .antMatchers("/captchaImage","/login").anonymous()
                 .anyRequest().authenticated();
 
-        // 添加Logout filter
+        //基于 token，所以不需要session，取消session（取不取消没有影响，只不过是生成了没用的数据）
+        //也就是登录的时候，不会生成 JSessionID，只是使用我们的  token 就可以了
+        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        //认证 token 失败的 handler 逻辑
+        http.exceptionHandling().authenticationEntryPoint(unauthenticatedHandler);
+
+        // 添加Logout filter，自定义 logout 逻辑
         http.logout().logoutUrl("/logout").logoutSuccessHandler(logoutSuccessHandler);
 
         //将 jwt 过滤器放到 username认证 filter 前面，具体原因去看 security
